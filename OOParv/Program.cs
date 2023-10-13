@@ -6,10 +6,14 @@
         {
             Lion lion1 = new Lion("DjungelsKonung", 18, "orange-brown", true);
 
+            lion1.MakeSound();
             lion1.DjungleKing();
+
+            Console.WriteLine();
 
             Fish fish1 = new Fish("Nemo", 5, "Orange", false, true);
 
+            fish1.MakeSound();
             fish1.swimming();
 
             Console.WriteLine();
@@ -23,15 +27,11 @@
             Console.WriteLine();
 
             Dog dog1 = new Dog("Pluto", 10, "black and white", true);
-            Dog dog2 = new Dog("Sixten", 15, "black", false);
 
             dog1.SearchingForBone();
             dog1.makeSound();
 
-            Console.WriteLine();
 
-            dog2.SearchingForBone();
-            dog2.makeSound();
         }
     }
 }
