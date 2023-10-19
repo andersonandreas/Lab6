@@ -23,7 +23,7 @@
 
         protected void MythAboutCats()
         {
-            Console.WriteLine("Cats has 9 lives.");
+            Console.WriteLine("They say that we have has 9 lives.");
         }
         protected override void MakeSound()
         {

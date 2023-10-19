@@ -18,7 +18,7 @@
 
         }
 
-        public void Running100M()
+        protected void Running100M()
         {
             Console.WriteLine($"Im a {this.Species} and im the fastest animal in the world, try to catch me!..");
         }
