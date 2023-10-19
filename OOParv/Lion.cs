@@ -6,21 +6,39 @@
 
         public bool KingOfDjungle { get; set; } = true;
 
-        public Lion(string name, int age, string color, bool kingOfDjungle)
+        public Lion(string name, byte age, string color, bool kingOfJungle)
             : base(name, age, color, true, "Lion")
         {
-            KingOfDjungle = kingOfDjungle;
+            KingOfDjungle = kingOfJungle;
         }
 
-        public override void MakeSound()
+        public override void DailyActivitesAnimal()
         {
-            Console.WriteLine("The lion roar and is very loud!.");
+
+            base.DailyActivitesAnimal();
+            this.DjungleKing();
         }
 
-        public void DjungleKing()
+
+        protected void DjungleKing()
         {
-            Console.WriteLine($"People saying that i'm the king of the djungle, but i need to verify this: ({(bool)this.KingOfDjungle}).");
+            Console.WriteLine($"People saying that i'm the king of the jungle, but i need to verify this: ({(bool)this.KingOfDjungle}).");
         }
+        protected override void MakeSound()
+        {
+            Console.WriteLine("The Lion RoarRoar!.");
+        }
+        protected override void EatingTime()
+        {
+            Console.WriteLine("Like to eat meat in Safari djungle");
+
+        }
+        protected override void DailyRunning()
+        {
+            Console.WriteLine($"{this.Name} doing some daily running.");
+
+        }
+
 
 
     }

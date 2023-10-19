@@ -5,23 +5,40 @@
 
         public bool ColdBlooded { get; set; }
 
-        public Fish(string name, int age, string color, bool wildAnimal, bool coldBlooded)
+        public Fish(string name, byte age, string color, bool wildAnimal, bool coldBlooded)
             : base(name, age, color, "Fish", wildAnimal)
         {
             ColdBlooded = coldBlooded;
         }
 
-        public override void MakeSound()
+
+        public override void DailyActivitesAnimal()
         {
-            Console.WriteLine("Plask Plask..");
+            base.DailyActivitesAnimal();
+            this.swimming();
+
+
         }
 
-        public void swimming()
+        protected void swimming()
         {
             Console.WriteLine("\n¸.·´¯`·.´¯`·.¸¸.·´¯`·.¸><(((º>\n");
         }
 
+        protected override void MakeSound()
+        {
+            Console.WriteLine("Plask Plask..");
+        }
 
+        protected override void EatingTime()
+        {
+            Console.WriteLine("Eating small fishes and seagrass..");
+        }
+
+        protected override void DailyRunning()
+        {
+            Console.WriteLine("i don't run.. I swim!");
+        }
     }
 }
 

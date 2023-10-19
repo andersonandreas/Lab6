@@ -5,19 +5,21 @@
 
         public bool HaveABone { get; set; } = false;
 
-        public Dog(string name, int age, string color, bool haveABone)
+        public Dog(string name, byte age, string color, bool haveABone)
             : base(name, age, color, "Dog", false)
         {
             HaveABone = haveABone;
         }
 
-
-        public virtual void makeSound()
+        public override void DailyActivitesAnimal()
         {
-            Console.WriteLine("The dogs woof woof!");
+
+            base.DailyActivitesAnimal();
+            this.SearchingForBone();
+
         }
 
-        public void SearchingForBone()
+        protected void SearchingForBone()
         {
             if (HaveABone == true)
             {
@@ -25,10 +27,24 @@
             }
             else
             {
-                Console.WriteLine("I don't get it! Why dont relax and maybe taking a napp instead?! :)");
+                Console.WriteLine("Naaah playing with a bone.. I don't get it! Why dont relax and maybe taking a napp instead?! :)");
             }
         }
 
+        protected override void MakeSound()
+        {
+            Console.WriteLine("The dogs woof woof!");
+        }
+
+        protected override void EatingTime()
+        {
+            Console.WriteLine($"{this.Name} like to eat typical {this.TypeOfAnimal} food and bones.");
+        }
+
+        protected override void DailyRunning()
+        {
+            Console.WriteLine($"I'm just running when i chasing the cat hahaha..");
+        }
     }
 }
 

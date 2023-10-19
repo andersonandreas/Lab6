@@ -1,16 +1,16 @@
 ﻿namespace OOParv
 {
-    class Animal
+    public abstract class Animal
     {
 
-        public string Name { get; set; } = "unknown";
-        public int Age { get; set; } = -1;
-        public string Color { get; set; } = "unknown";
+        public string Name { get; set; } = "Unknown";
+        public byte Age { get; set; } = 0;
+        public string Color { get; set; } = "Unknown";
         public string TypeOfAnimal { get; set; } = "animal";
         public bool WildAnimal { get; set; } = false;
 
 
-        public Animal(string name, int age, string color, string typeOfAnimal, bool wildAnimal)
+        public Animal(string name, byte age, string color, string typeOfAnimal, bool wildAnimal)
         {
             Name = name;
             Age = age;
@@ -20,21 +20,20 @@
         }
 
 
-        public virtual void MakeSound()
+
+        public virtual void DailyActivitesAnimal()
         {
-            Console.WriteLine("Animal making sounds..");
+            Console.WriteLine("\nActivities:");
+            this.MakeSound();
+            this.EatingTime();
+            this.DailyRunning();
+
 
         }
 
-        public void EatingTime()
-        {
-            Console.WriteLine("FoodTime Yeah!");
-        }
-
-        public void DailyRunning()
-        {
-            Console.WriteLine("Run, run, Run, run..!!");
-        }
+        protected abstract void MakeSound();
+        protected abstract void EatingTime();
+        protected abstract void DailyRunning();
 
 
 

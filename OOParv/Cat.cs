@@ -5,7 +5,7 @@
     {
         public string Species { get; set; }
 
-        public Cat(string name, int age, string color, bool wildAnimal, string species)
+        public Cat(string name, byte age, string color, bool wildAnimal, string species)
             : base(name, age, color, "Cat", wildAnimal)
 
         {
@@ -13,16 +13,32 @@
         }
 
 
-        public override void MakeSound()
+        public override void DailyActivitesAnimal()
         {
-            Console.WriteLine("The cat Meow Meow!.");
+            base.DailyActivitesAnimal();
+            this.MythAboutCats();
+
         }
 
-        public void MythAboutCats()
+
+        protected void MythAboutCats()
         {
             Console.WriteLine("Cats has 9 lives.");
         }
+        protected override void MakeSound()
+        {
+            Console.WriteLine("The cat Meow Meow!.");
+        }
+        protected override void EatingTime()
+        {
+            Console.WriteLine("Eating fishes and rat");
 
+        }
+        protected override void DailyRunning()
+        {
+            Console.WriteLine($"{this.Name} like to chase just about anything that moves");
+
+        }
     }
 }
 
