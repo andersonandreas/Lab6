@@ -3,7 +3,7 @@
     internal class Fish : Animal
     {
 
-        public bool ColdBlooded { get; set; }
+        public bool ColdBlooded { get; set; } = true;
 
         public Fish(string name, byte age, string color, bool wildAnimal, bool coldBlooded)
             : base(name, age, color, "Fish", wildAnimal)

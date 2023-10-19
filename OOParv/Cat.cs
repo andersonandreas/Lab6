@@ -3,7 +3,7 @@
 
     class Cat : Animal
     {
-        public string Species { get; set; }
+        public string Species { get; set; } = "Unknown";
 
         public Cat(string name, byte age, string color, bool wildAnimal, string species)
             : base(name, age, color, "Cat", wildAnimal)
